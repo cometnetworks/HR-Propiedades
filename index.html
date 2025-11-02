@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Propiedades - HR & INVI</title>
+    <meta name="description" content="Listado de proyectos y presentaciones inmobiliarias exclusivas.">
+    
+    <style>
+        :root {
+            --color-background: #121212;
+            --color-text: #EAEAEA;
+            --color-primary: #D4AF37; /* Tono de oro premium */
+            --color-primary-dark: #B8860B;
+            --color-card-bg: #1E1E1E;
+            --color-border: #333333;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            background: var(--color-background);
+            color: var(--color-text);
+            font-family: var(--font-main);
+            scroll-behavior: smooth;
+        }
+
+        .page-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* --- Encabezado --- */
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo-group {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .logo-group img {
+            height: 50px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+            color: var(--color-primary);
+            text-shadow: 0 2px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .page-header .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: #BDBDBD;
+            font-weight: 300;
+        }
+
+        /* --- Cuadrícula de Propiedades --- */
+        .property-grid {
+            display: grid;
+            /* 2 columnas en desktop, como solicitaste */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        /* --- Ficha de Propiedad --- */
+        .property-card {
+            display: block;
+            background: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .property-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+            border-color: var(--color-primary);
+        }
+
+        .card-image {
+            aspect-ratio: 16 / 9;
+            background: #000;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .property-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            color: var(--color-primary);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-content p {
+            color: #C0C0C0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            /* Limitar descripción a 2 líneas */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+
+        .card-button {
+            background: var(--color-primary);
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .property-card:hover .card-button {
+            background: var(--color-primary-dark);
+        }
+
+        /* --- Responsividad --- */
+        @media (max-width: 768px) {
+            .page-container {
+                padding: 30px 15px;
+            }
+
+            .property-grid {
+                /* 1 columna en móvil */
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .page-header {
+                margin-bottom: 40px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+
+        <header class="page-header">
+            <div class="logo-group">
+                <!-- Logos Centrados -->
+                <img src="https://res.cloudinary.com/dtlpkbbcp/image/upload/v1761891745/img8_johvzg.png" alt="Logo HR">
+                <img src="https://res.cloudinary.com/dtlpkbbcp/image/upload/v1761891755/Captura_de_pantalla_2025-10-30_a_la_s_11.06.58_p.m._wxugr3.png" alt="Logo INVI">
+            </div>
+            <h1>Listado de Propiedades</h1>
+            <p class="subtitle">Explora nuestros proyectos exclusivos</p>
+        </header>
+
+        <main>
+            <div class="property-grid">
+
+                <!-- Ficha 1 -->
+                <a href="https://alvaro236-hct9o8qg.manus.space/" class="property-card" target="_blank">
+                    <div class="card-image">
+                        <img src="https://res.cloudinary.com/dtlpkbbcp/image/upload/v1762051033/Captura_de_pantalla_2025-11-01_a_la_s_8.31.14_p.m._fdmmxa.png" alt="Preview de Álvaro Obregón 236">
+                    </div>
+                    <div class="card-content">
+                        <h3>Álvaro Obregón 236</h3>
+                        <p>Un proyecto exclusivo en una ubicación privilegiada. Descubre los detalles.</p>
+                        <span class="card-button">Ver Presentación</span>
+                    </div>
+                </a>
+
+                <!-- Ficha 2 -->
+                <a href="https://huatap42-euxipijp.manus.space/" class="property-card" target="_blank">
+                    <div class="card-image">
+                        <img src="https://res.cloudinary.com/dtlpkbbcp/image/upload/v1762051041/Captura_de_pantalla_2025-11-01_a_la_s_8.31.48_p.m._zyi7fy.png" alt="Preview de Huatabampo 42">
+                    </div>
+                    <div class="card-content">
+                        <h3>Huatabampo 42</h3>
+                        <p>Descubre este increíble proyecto residencial. Lujo y confort en la mejor ubicación.</p>
+                        <span class="card-button">Ver Presentación</span>
+                    </div>
+                </a>
+
+                <!-- Ficha 3 -->
+                <a href="https://prolong423-hvpjgz57.manus.space/" class="property-card" target="_blank">
+                    <div class="card-image">
+                        <img src="https://res.cloudinary.com/dtlpkbbcp/image/upload/v1762051051/Captura_de_pantalla_2025-11-01_a_la_s_8.32.20_p.m._u4dhc8.png" alt="Preview de Prolongación San Antonio 423">
+                    </div>
+                    <div class="card-content">
+                        <h3>Prolongación San Antonio 423</h3>
+                        <p>Una breve descripción de este increíble proyecto residencial. Lujo y confort.</p>
+                        <span class="card-button">Ver Presentación</span>
+                    </div>
+                </a>
+
+                <!-- Ficha 4 -->
+                <a href="https://hd286presen-yfjt7hub.manus.space/" class="property-card" target="_blank">
+                    <div class="card-image">
+                        <img src="https://res.cloudinary.com/dtlpkbbcp/image/upload/v1762051058/Captura_de_pantalla_2025-11-01_a_la_s_8.32.43_p.m._aj8ex3.png" alt="Preview de Hernández y Dávalos 286">
+                    </div>
+                    <div class="card-content">
+                        <h3>Hernández y Dávalos 286</h3>
+                        <p>Conoce los detalles de este proyecto residencial único. Modernidad y estilo.</p>
+                        <span class="card-button">Ver Presentación</span>
+                    </div>
+                </a>
+
+                <!-- Ficha 5 -->
+                <a href="https://cholula-109.vercel.app/" class="property-card" target="_blank">
+                    <div class="card-image">
+                        <img src="https://res.cloudinary.com/dtlpkbbcp/image/upload/v1762051066/Captura_de_pantalla_2025-11-01_a_la_s_8.33.12_p.m._hvplx3.png" alt="Preview de Cholula 109">
+                    </div>
+                    <div class="card-content">
+                        <h3>Cholula 109</h3>
+                        <p>El balance perfecto entre diseño y confort. Explora la presentación.</p>
+                        <span class="card-button">Ver Presentación</span>
+                    </div>
+                </a>
+
+                <!-- Ficha 6 -->
+                <a href="https://amsterdam-25.vercel.app/" class="property-card" target="_blank">
+                    <div class="card-image">
+                        <img src="https://res.cloudinary.com/dtlpkbbcp/image/upload/v1762051072/Captura_de_pantalla_2025-11-01_a_la_s_8.33.29_p.m._gosib8.png" alt="Preview de Amsterdam 25">
+                    </div>
+                    <div class="card-content">
+                        <h3>Amsterdam 25</h3>
+                        <p>Proyecto residencial de lujo con 24 departamentos en el corazón de Hipódromo Condesa.</p>
+                        <span class="card-button">Ver Presentación</span>
+                    </div>
+                </a>
+
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>
+
